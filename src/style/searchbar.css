@@ -1,0 +1,60 @@
+.second-nav {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 1.4rem;
+  width: 100%;
+  background-color: #E40046;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 500;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+.second-nav .snap-logo img {
+  width: 6rem;
+  object-fit: cover;
+  margin-left: 2rem;
+}
+
+.second-nav .input-search{
+  padding: 1rem;
+  font-size: small;
+  display: flex;
+  flex-direction: row;
+}
+.input-search > input{
+  width: 30rem;
+  border: 0;
+  padding: 0.5em;
+  border-radius: 4px 0 0 4px ;
+}
+.second-nav .input-search .magnifine{
+  background-color: #303335;
+  color: white;
+  padding: 0.5rem 1em;
+  border-radius: 0 4px 4px 0; 
+  /* margin-bottom: 6.35px; */
+}
+
+
+/* .second-nav .nav2{
+  margin-left: 300px;
+  align-items: center;
+  justify-content: center;
+} */
+@media only screen and (max-width: 600px) {
+  .second-nav{
+      top: 0;
+  }
+  .input-search > input{
+    width: 150px;
+    border: 0;
+    padding: 0.5em;
+    border-radius: 4px ;
+  }
+  .second-nav .input-search .magnifine{
+   display: none;
+  }
+
+}
