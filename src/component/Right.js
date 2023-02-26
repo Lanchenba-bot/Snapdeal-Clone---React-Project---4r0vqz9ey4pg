@@ -4,14 +4,14 @@ import ContextData from "../context/product-data";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "../style/right.css";
-import { useNavigate } from "react-router-dom";
+import formatAmount from "../context/constant";
 
 const Right = () => {
   const { allProducts, active, search, setSelect } = useContext(ContextData);
   const [array, setArray] = useState([]);
   const [page, setPage] = useState(0);
   // const navigate=useNavigate();
-
+  const { select } = useContext(ContextData);
   function paginate(Products) {
     const perPage = 6;
     const totalPages = Math.ceil(Products.length / perPage);
@@ -35,16 +35,28 @@ const Right = () => {
           }}
           key={data.id}
         >
-          <Card style={{ width: "18rem" }}>
+          <Card style={{ width: "16rem" }}>
             <Card.Img
               variant="top"
               src={data.thumbnail}
               className="product-image"
             />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>{data.title}</Card.Title>
               <Card.Text>{data.description}</Card.Text>
             </Card.Body>
+            <span style={{
+            color: '#E40046',
+            marginBottom:'1rem',}}>
+            <span  >
+              {formatAmount((data.price*80))}
+
+            </span>
+            {/* &nbsp;&nbsp;
+            <span style={{ textDecorationLine: "line-through", color: "gray" }}>
+              {formatAmount(select.price * 80)}
+            </span> */}
+          </span>
           </Card>
         </div>
       </>
@@ -75,9 +87,22 @@ const Right = () => {
                 className="product-image"
               />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>{data.title}</Card.Title>
                 <Card.Text>{data.description}</Card.Text>
               </Card.Body>
+              <span style={{
+                color: '#E40046',
+                marginBottom: '1rem',
+                }}>
+                <span  >
+                  {formatAmount((data.price*80))}
+
+                </span>
+                {/* &nbsp;&nbsp;
+                <span style={{ textDecorationLine: "line-through", color: "gray" }}>
+                  {formatAmount(select.price * 80)}
+                </span> */}
+              </span>
             </Card>
           </div>
         </>
@@ -108,9 +133,21 @@ const Right = () => {
               src={data.thumbnail}
             />
             <Card.Body>
-              <Card.Title>{}</Card.Title>
+              <Card.Title>{data.title}</Card.Title>
               <Card.Text>{data.description}</Card.Text>
             </Card.Body>
+            <span style={{
+            color: '#E40046',
+            marginBottom: '1rem',}}>
+            <span  >
+              {formatAmount((data.price*80))}
+
+            </span>
+            {/* &nbsp;&nbsp;
+            <span style={{ textDecorationLine: "line-through", color: "gray" }}>
+              {formatAmount(select.price * 80)}
+            </span> */}
+          </span>
           </Card>
         </div>
       </>
