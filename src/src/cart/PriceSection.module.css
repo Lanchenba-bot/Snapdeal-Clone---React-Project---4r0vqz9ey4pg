@@ -1,0 +1,22 @@
+.price_wrapper {
+  padding: 2rem 3rem 2rem 3rem;
+  background-color: #eaf1fe;
+  margin-right: 2rem;
+  border-radius: 20px;
+  align-self: flex-start;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  color: #333;
+}
+
+.action_button {
+  text-align: center;
+  margin-top: 4rem;
+}

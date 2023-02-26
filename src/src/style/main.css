@@ -1,0 +1,5 @@
+.display-left-right{
+    display: grid;
+    grid-template-columns: 20fr 80fr;
+    row-gap: 20px;
+}

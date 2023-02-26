@@ -1,0 +1,41 @@
+.list-parent{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    background-color: white;
+    justify-content: flex-start;
+    margin-top: 6rem;
+    margin-left: 0.5rem;
+    height: fit-content;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 1rem 0.5rem;
+    border-radius: 8px;
+
+}
+
+.list-parent .tabs-btn .button{
+    text-transform: capitalize;
+    text-decoration: none;
+    text-align: left;
+    color: grey;
+    
+    padding: 0.2em 1em;
+}
+.list-parent .tabs-btn .button:hover{
+    background-color: aliceblue;
+    color: rgb(72, 72, 72);
+    border-left: 5px solid #C7003D;
+}
+
+.list-parent .select-order{
+    font-size: 18px;
+    font-weight: 500;
+}
+.list-parent .tabs-btn{
+    display: flex;
+    flex-direction: row;
+    flex-flow: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
