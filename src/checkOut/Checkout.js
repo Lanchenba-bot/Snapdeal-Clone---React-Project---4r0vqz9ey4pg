@@ -18,19 +18,7 @@ import Review from "./Review";
 import { Link as LinkDom } from "react-router-dom";
 import { cartActions } from "../store/cart-slice";
 import { useDispatch } from "react-redux";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import './default.css';
 
 const steps = ["Shipping address", "Payment details", "Review your order"];
 
@@ -65,10 +53,11 @@ export default function Checkout() {
   };
 
   return (
+    <div className="form">
     <ThemeProvider theme={theme}>
-      <CssBaseline />
       <AppBar
         position="absolute"
+
         color="default"
         elevation={0}
         sx={{
@@ -76,11 +65,6 @@ export default function Checkout() {
           borderBottom: (t) => `1px solid ${t.palette.divider}`,
         }}
       >
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Company name
-          </Typography>
-        </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper
@@ -132,8 +116,8 @@ export default function Checkout() {
             </React.Fragment>
           )}
         </Paper>
-        <Copyright />
       </Container>
     </ThemeProvider>
+    </div>
   );
 }

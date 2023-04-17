@@ -1,18 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { useContext, useEffect } from "react";
 import NavBar from "./component/NavBar";
 import Searchbar from "./component/Searchbar";
 import Main from "./component/Main";
 import ContextData from "./context/product-data";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
-import Description from "./component/Description";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Checkout from "./checkOut/Checkout";
 import Cart from "./cart/Cart";
 import Login from "./component/Login";
 
 function App() {
-  const { setAllProducts, setCategories, setActive, allProducts } =
+  const { setAllProducts, setCategories, setActive } =
     useContext(ContextData);
   useEffect(() => {
     async function getData() {

@@ -1,3 +1,4 @@
+import { Button } from "bootstrap";
 import React, { useContext, useEffect } from "react";
 import ContextData from "../context/product-data";
 import "../style/left.css";
@@ -29,10 +30,12 @@ const Left = () => {
   // console.log(categories);
   return (
     <div className="list-parent">
+      
       <div className="select-order">Select Your products</div>
       <div className="tabs-btn">
         <a className="button" onClick={()=>setActive([])}>All</a>
-        {categorys}</div>
+        {categorys}
+        </div>
     </div>
   );
 };

@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../store/cart-slice";
 
 const Description = () => {
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
   const { select } = useContext(ContextData);
   const [src, setSrc] = useState(select.thumbnail);
 
@@ -37,7 +37,7 @@ const Description = () => {
   return (
     <div className="descriptions">
       <div className="img-left">
-        <img src={src} className="main-img" />
+        <img src={src} className="main-img" alt="main-image"/>
         <div className="sort-img">
           {select.images.map((data) => {
             return <img src={data} onClick={() => setSrc(data)} />;
@@ -69,8 +69,8 @@ const Description = () => {
           </span>
           <span style={{
             background: 'green',
-            color:'white', 
-            padding: '0.3em 0.5em', 
+            color:'white',
+            padding: '0.3em 0.5em',
             borderRadius: '4px',
             margin: '1rem'}}>
               {select.discountPercentage}% off</span>

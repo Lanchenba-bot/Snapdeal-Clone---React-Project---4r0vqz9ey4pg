@@ -18,7 +18,6 @@ const Main = () => {
     <div className="display-left-right">     
       <Left />
       {select.title?<Description />:<Right/>}
-      {/* <div></div> */}
     </div>
   );
 };

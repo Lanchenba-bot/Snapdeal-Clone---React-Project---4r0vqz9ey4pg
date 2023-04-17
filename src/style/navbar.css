@@ -9,6 +9,7 @@
     color: white;
     font-size: small;
     z-index: 1000;
+    top: 0;
 }
 
 .nav-bar .nav-left-side{

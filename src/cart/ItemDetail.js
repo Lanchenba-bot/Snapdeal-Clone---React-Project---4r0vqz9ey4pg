@@ -1,14 +1,14 @@
 import React from "react";
-import classes from "./ItemDetails.module.css";
+import "./ItemDetails.css";
 import RenderItems from "./RenderItems";
 
 function ItemDetails(props) {
   const { items } = props.cart;
 
   return (
-    <div className={classes.wrapper}>
+    <div className='wrapper'>
       <h1>Your Shopping Cart</h1>
-      <div className={classes["items-container"]}>
+      <div >
         {items.map((item) => {
           console.log(item.id);
           return <RenderItems item={item} key={item.id} />;

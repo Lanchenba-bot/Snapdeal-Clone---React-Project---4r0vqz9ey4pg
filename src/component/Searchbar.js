@@ -14,6 +14,7 @@ const Searchbar = () => {
   const navigate = useNavigate();
   const navii=!isUserLogin?'/login':'/cart';
   const { totalQuantity, totalCartPrice } = useSelector((state) => state);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
       <div className="second-nav">
         <div className="snap-logo">

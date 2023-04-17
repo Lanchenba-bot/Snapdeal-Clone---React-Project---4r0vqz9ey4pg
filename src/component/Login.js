@@ -55,7 +55,7 @@ if(localStorage.getItem("logincred")){
     };
     console.log(obj);
     async function storeIntoServer() {
-      await fetch("https://fir-a5a74-default-rtdb.firebaseio.com/login.json", {
+      await fetch("https://snapdeal-clone-6c80a-default-rtdb.firebaseio.com/login.json", {
         method: "POST",
         body: JSON.stringify(obj),
       });
@@ -71,7 +71,7 @@ if(localStorage.getItem("logincred")){
     const userPass = userpassRef.current.value;
     async function getter() {
       const feth = await fetch(
-        "https://fir-a5a74-default-rtdb.firebaseio.com/login.json"
+        "https://snapdeal-clone-6c80a-default-rtdb.firebaseio.com/login.json"
       );
       const convertjson = await feth.json();
       const Arr = [];

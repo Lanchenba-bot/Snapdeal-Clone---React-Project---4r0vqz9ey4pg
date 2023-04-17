@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import ContextData from "../context/product-data";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "../style/right.css";
 import formatAmount from "../context/constant";
@@ -10,8 +9,9 @@ const Right = () => {
   const { allProducts, active, search, setSelect } = useContext(ContextData);
   const [array, setArray] = useState([]);
   const [page, setPage] = useState(0);
+  const [sortOrder, setSortOrder] = useState("ascending"); 
   // const navigate=useNavigate();
-  const { select } = useContext(ContextData);
+  // const { select } = useContext(ContextData);
   function paginate(Products) {
     const perPage = 6;
     const totalPages = Math.ceil(Products.length / perPage);
@@ -24,10 +24,22 @@ const Right = () => {
   function handlePageClick(e) {
     setPage(e.selected);
   }
+  function handleSortClick() { // 2. Add function to handle sorting
+    setSortOrder(sortOrder === "ascending" ? "descending" : "ascending");
+    const sortedProducts = allProducts.sort((a, b) => {
+      if (sortOrder === "ascending") {
+        return a.price - b.price;
+      } else {
+        return b.price - a.price;
+      }
+    });
+    setArray(paginate(sortedProducts));
+  }
 
   let arr = active.data?.map((data) => {
     return (
       <>
+        
         <div
           onClick={() => {
             setSelect(data);
@@ -61,7 +73,7 @@ const Right = () => {
         </div>
       </>
     );
-  });
+  })
 
   let srch = allProducts
     .filter((data) => {
