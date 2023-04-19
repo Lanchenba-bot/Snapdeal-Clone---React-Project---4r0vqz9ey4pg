@@ -8,6 +8,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Checkout from "./checkOut/Checkout";
 import Cart from "./cart/Cart";
 import Login from "./component/Login";
+import Footer from "./component/Footer";
+import { FooterLinkCard } from "./component/FooterLinkCard";
+import { FooterLinks } from "./component/FooterLinks";
 
 function App() {
   const { setAllProducts, setCategories, setActive } =
@@ -38,6 +41,8 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
+      <FooterLinks/>
+      <Footer/>
     </div>
   );
 }
